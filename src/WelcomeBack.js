@@ -29,7 +29,13 @@ function WelcomeBack() {
         </div>
 
         <p className="signup-link">
-          <a href="#" onClick={() => navigate('/')}>← Back</a>
+          <button 
+            className="back-link-button"
+            onClick={() => navigate('/')}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', padding: 0 }}
+          >
+            ← Back
+          </button>
         </p>
       </div>
     </div>
