@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import background from './assets/background.jpg';
 import googleIcon from './assets/google.png';
+import logo from './assets/storyafricalogo.png';
 import './App.css'; 
 
 function Signup() {
@@ -20,7 +21,7 @@ function Signup() {
 
   return (
     <div className="app-container" style={{ backgroundImage: `url(${background})` }}>
-      
+      <img src={logo} alt="StoryAfrika" className="title-logo" />
 
       <div className="overlay">
         <h2 className="subtitle">Create an account</h2>
