@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import background from './assets/background.jpg';
 import './App.css';
+import logo from './assets/storyafricalogo.png';
 
 function WelcomeBack() {
   const location = useLocation();
@@ -10,7 +11,7 @@ function WelcomeBack() {
 
   return (
     <div className="app-container" style={{ backgroundImage: `url(${background})` }}>
-      <h1 className="title">StoryAfrika</h1>
+      <img src={logo} alt="StoryAfrika" className="title-logo" />
 
       <div className="overlay">
         <h2 className="subtitle">Welcome back! 👋</h2>

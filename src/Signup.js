@@ -15,14 +15,12 @@ function Signup() {
       alert('Please enter your email');
       return;
     }
-    // In real app → send code to email here
-    // For now, just go to verify page and show fake email
     navigate('/verify', { state: { email } });
   };
 
   return (
     <div className="app-container" style={{ backgroundImage: `url(${background})` }}>
-      <h1 className="title">StoryAfrika</h1>
+      
 
       <div className="overlay">
         <h2 className="subtitle">Create an account</h2>
@@ -31,7 +29,7 @@ function Signup() {
           <input
             type="email"
             placeholder="Enter email address"
-            className="email-input"
+            className={`email-input ${email ? 'has-input' : ''}`}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required

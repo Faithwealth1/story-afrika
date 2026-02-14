@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import background from './assets/background.jpg';
 import './App.css';
+import logo from './assets/storyafricalogo.png';
 
 function Verify() {
   const location = useLocation();
@@ -14,6 +15,7 @@ function Verify() {
 
   const [code, setCode] = useState(['', '', '', '', '', '']);
   const [invalidOtp, setInvalidOtp] = useState(false);
+  const [showToast, setShowToast] = useState(false);
   const inputRefs = useRef([]);
 
   // Auto-focus first input when component mounts
@@ -51,17 +53,20 @@ function Verify() {
   };
 
   const handleResend = () => {
-    alert('New code sent! (In a real app this would trigger email again)');
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
   };
 
   return (
     <div className="app-container verify-page" style={{ backgroundImage: `url(${background})` }}>
-      <h1 className="title">StoryAfrika</h1>
+      <img src={logo} alt="StoryAfrika" className="title-logo" />
 
-      <div className="toast toast-top">
-        <span className="checkmark-circle">✔</span>
-        New code sent!
-      </div>
+      {showToast && (
+        <div className="toast toast-top">
+          <span className="checkmark-circle">✔</span>
+          New code sent!
+        </div>
+      )}
 
       <div className="overlay verify-overlay">
         <h2 className="subtitle">We sent you a mail</h2>
@@ -89,7 +94,7 @@ function Verify() {
         {invalidOtp && <p className="otp-error">Invalid OTP</p>}
 
         <button
-          className={`continue-button ${code.join('').length === 6 ? 'enabled' : ''}`}
+          className={`continue-button ${code.some(d => d !== '') ? 'has-input' : ''} ${code.join('').length === 6 ? 'enabled' : ''}`}
           onClick={handleContinue}
         >
           Continue
