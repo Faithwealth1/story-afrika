@@ -38,7 +38,7 @@ function Login() {
           <input
             type="email"
             placeholder="Enter email address"
-            className={`email-input ${email ? 'has-input' : ''} ${invalidEmail ? 'error' : ''}`}
+            className={`email-input ${invalidEmail ? 'error' : ''}`}
             value={email}
             onChange={(e) => {
               const val = e.target.value;

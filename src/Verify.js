@@ -46,7 +46,7 @@ function Verify() {
   const handleContinue = () => {
     const enteredCode = code.join('');
     if (enteredCode.length === 6) {
-      navigate(isLogin ? '/welcome' : '/', { state: { email } });
+      navigate('/', { state: { email } });
     } else {
       setInvalidOtp(true);
     }

@@ -76,7 +76,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 155%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.16);
   color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
 }
@@ -86,23 +86,19 @@
   opacity: 1;
 }
 .email-input:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.16);
   border-color: rgba(255, 255, 255, 0.4);
 }
 .email-input:focus {
   outline: none;
   box-shadow: none;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.16);
   border-color: rgba(255, 255, 255, 0.4);
-}
-.email-input.has-input {
-  background: #fffffff5;
-  color: #161616;
-  border-color: #ffffffe3;
 }
 .email-input.error {
   border-color: #ff4d4f;
   margin-bottom: 2px;
+  background: rgba(255, 255, 255, 0.16);
 }
 .email-error {
   color: #ff4d4f;
@@ -112,7 +108,7 @@
   line-height: 155%;
   margin-top: 1px;
   margin-bottom: 10px;
-  padding-left: 12px;
+  padding-left: 2px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -129,6 +125,18 @@
   font-size: 10px;
   line-height: 14px;
   flex-shrink: 0;
+}
+
+/* Keep autofill background consistent */
+.email-input:-webkit-autofill,
+.email-input:-webkit-autofill:hover,
+.email-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgba(250, 243, 243, 0.85);
+  caret-color: rgba(247, 247, 247, 0.9);
+  transition: background-color 99999s ease-in-out 0s;
+  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.16) inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.16) inset !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
 }
 
 /* Continue button */
@@ -226,6 +234,7 @@
 
 .signup-link {
   margin-top: 25px;
+  font-size: 14px;
 }
 
 .signup-link a {
@@ -233,6 +242,7 @@
   text-decoration: underline;
   font-family: "Inter", sans-serif;
   font-weight: 300;
+  font-size: 14px;
 }
 
 /* Responsiveness: Adjust for smaller screens */
@@ -358,17 +368,17 @@
   margin: 0 auto 15px;
   background: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: none;
 }
 .verify-overlay .continue-button.has-input {
   background: #ffffff;
   color: #161616;
-  border-color: #ffffff;
+  border: 1px solid #ffffff;
 }
 .verify-overlay .continue-button.enabled {
   background: #ffffff;
   color: #161616;
-  border-color: #ffffff;
+  border: 1px solid #ffffff;
 }
 .resend {
   margin-top: 12px;

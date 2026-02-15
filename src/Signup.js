@@ -30,7 +30,7 @@ function Signup() {
           <input
             type="email"
             placeholder="Enter email address"
-            className={`email-input ${email ? 'has-input' : ''}`}
+            className="email-input"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
