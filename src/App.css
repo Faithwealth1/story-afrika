@@ -76,29 +76,24 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 155%;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
 }
 .email-input::placeholder {
-  color: #eeecece5;
-  font-weight: 300;
+  color: #ffffff;
+  font-weight: 400;
   opacity: 1;
-}
-.email-input:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.4);
 }
 .email-input:focus {
   outline: none;
   box-shadow: none;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.4);
 }
 .email-input.error {
   border-color: #ff4d4f;
   margin-bottom: 2px;
-  background: rgba(255, 255, 255, 0.16);
 }
 .email-error {
   color: #ff4d4f;
@@ -131,12 +126,16 @@
 .email-input:-webkit-autofill,
 .email-input:-webkit-autofill:hover,
 .email-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: rgba(250, 243, 243, 0.85);
-  caret-color: rgba(247, 247, 247, 0.9);
-  transition: background-color 99999s ease-in-out 0s;
-  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.16) inset !important;
-  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.16) inset !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.85);
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.15) inset;
+}
+.email-input:-moz-autofill,
+.email-input:-moz-autofill:hover,
+.email-input:-moz-autofill:focus {
+  -moz-text-fill-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.15) inset;
 }
 
 /* Continue button */
