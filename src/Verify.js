@@ -11,7 +11,6 @@ function Verify() {
 
   // Safely get data passed from Signup or Login page
   const email = location.state?.email || 'yourmail@gmail.com';
-  const isLogin = location.state?.isLogin || false;   // This fixes the 'isLogin is not defined' error
 
   const [code, setCode] = useState(['', '', '', '', '', '']);
   const [invalidOtp, setInvalidOtp] = useState(false);
