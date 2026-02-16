@@ -27,13 +27,15 @@
   width: 400px; /* Default width for desktop */
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.151);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.062), 0 4px 30px rgba(0, 0, 0, 0.158);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.062),
+    0 4px 30px rgba(0, 0, 0, 0.158);
   color: rgba(255, 255, 255, 0.849); /* Text color for visibility on dark bg */
 }
 
 /* Title (StoryAfrika) */
 .title {
-  font-family: "Source Serif 4", ;
+  font-family: "Source Serif 4";
   font-size: 40px;
   font-weight: 700;
   font-style: bold;
@@ -146,12 +148,18 @@
   color: rgb(36, 33, 33);
   border: none;
   border-radius: 20px;
-  font-family: "Inter", ;
+  font-family: "Inter";
   font-weight: 400;
   font-size: 15px;
   line-height: 155%;
   cursor: pointer;
   margin-bottom: 15px;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover only for Signup/Login overlays (exclude Verify) */
+.overlay:not(.verify-overlay) .continue-button:hover {
+  background: #ededed;
 }
 
 /* OR separator */
@@ -203,7 +211,7 @@
 .login-link {
   margin: 15px 0;
   font-size: 14px;
-  font-family: "Inter",;
+  font-family: "Inter";
   font-weight: 300;
 }
 
