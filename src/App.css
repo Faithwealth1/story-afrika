@@ -12,6 +12,7 @@
   width: 100vw; /* Full viewport width */
   background-size: cover; /* Cover entire screen */
   background-position: center; /* Center the image */
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +53,7 @@
 .title-logo {
   position: absolute;
   top: 80px;
-  left: 60px;
+  left: 80px;
   height: 40px;
   width: auto;
   z-index: 10;
@@ -254,9 +255,20 @@
 
 /* Responsiveness: Adjust for smaller screens */
 @media (max-width: 600px) {
+  .app-container {
+    height: 100svh;
+    width: 100%;
+    background-size: cover;
+    background-position: 72% center;
+  }
+
   .overlay {
     width: 90%; /* Take most of screen on mobile */
-    padding: 20px; /* Less padding */
+    padding: 28px 20px; /* More vertical space on mobile */
+  }
+
+  .overlay:not(.verify-overlay) {
+    min-height: 500px; /* Taller auth card on mobile */
   }
 
   .title {
@@ -274,6 +286,13 @@
   .google-button {
     font-size: 14px; /* Smaller text */
     padding: 10px;
+  }
+
+  /* Move logo to the left edge on mobile without affecting desktop */
+  .title-logo {
+    left: 8px; /* close to the screen edge */
+    top: 70px; /* moved down on mobile */
+    height: 36px;
   }
 }
 
@@ -408,5 +427,10 @@
   }
   .otp-container {
     gap: 8px;
+    margin-bottom: 8px;
+  }
+  .otp-error {
+    margin-top: 0;
+    margin-bottom: 8px;
   }
 }
