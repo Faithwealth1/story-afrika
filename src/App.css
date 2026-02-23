@@ -291,7 +291,7 @@
   /* Move logo to the left edge on mobile without affecting desktop */
   .title-logo {
     left: 8px; /* close to the screen edge */
-    top: 70px; /* moved down on mobile */
+    top: calc(env(safe-area-inset-top, 0px) + 16px); /* higher on phone screens */
     height: 36px;
   }
 }
